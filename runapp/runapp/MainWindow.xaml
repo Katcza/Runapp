@@ -4,9 +4,26 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:runapp"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Margin="10,0,-0.4,0">
-        
+        Title="MainWindow" Height="600" Width="1024" ResizeMode="NoResize" WindowStyle="None">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="GridTheTittleBr" Grid.ColumnSpan="3" Background="#FF71D3EB">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0">
+                <Button x:Name="ShutdownButton" Width="35" Height="35" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF5D5D73" Click="ShutdownButton_Click">
+                    <materialDesign:PackIcon Kind="Power" Height="30" Width="31"/>
+
+                </Button>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
