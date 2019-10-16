@@ -29,5 +29,10 @@ namespace runapp
         {
             Application.Current.Shutdown();
         }
+
+        private void GridTheTittleBar_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
     }
 }

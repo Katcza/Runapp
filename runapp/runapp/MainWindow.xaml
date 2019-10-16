@@ -10,20 +10,32 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0"/>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="297.6"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
+            <RowDefinition Height="167.2"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid x:Name="GridTheTittleBr" Grid.ColumnSpan="3" Background="#FF71D3EB">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0">
-                <Button x:Name="ShutdownButton" Width="35" Height="35" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF5D5D73" Click="ShutdownButton_Click">
-                    <materialDesign:PackIcon Kind="Power" Height="30" Width="31"/>
 
+        <Grid Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="0,153,726,0">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF91979C" Offset="1"/>
+                    <GradientStop Color="#FF53B6CE"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+        <Image Width="298" HorizontalAlignment="Left" Grid.ColumnSpan="3" Grid.Row="1"  Source="runapp.png" VerticalAlignment="Top" Height="187" Grid.RowSpan="2"/>
+
+        <Grid x:Name="GridTheTittleBar" Grid.ColumnSpan="3" Background="#FF53B6CE" MouseDown="GridTheTittleBar_MouseDown">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0">
+                <Button x:Name="ShutdownButton" Width="35" Height="35" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF667383" Click="ShutdownButton_Click">
+                    <materialDesign:PackIcon Kind="Power" Height="30" Width="31"/>
                 </Button>
             </StackPanel>
         </Grid>
+
     </Grid>
 </Window>
