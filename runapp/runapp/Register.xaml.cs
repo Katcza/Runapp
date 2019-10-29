@@ -10,21 +10,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace runapp
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Window1 : Window
     {
-        public MainWindow()
+        public Window1()
         {
             InitializeComponent();
+            this.Closing += new System.ComponentModel.CancelEventHandler(Window1_Closing);
         }
-
         private void ShutdownButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -51,8 +50,42 @@ namespace runapp
         {
             Application.Current.MainWindow.WindowState = WindowState.Minimized;
         }
+        int i;
+        void Window1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (i == 1)
+            {
+                // Create a window
+                Window2 window = new Window2();
 
-       
+                // Open a window
+                window.Show();
+            }
+
+            if (i == 0)
+            {
+                // Create a window
+                MainWindow window = new MainWindow();
+
+                // Open a window
+                window.Show();
+            }
+
+        }
+        private void SubmitButton(object sender, RoutedEventArgs e)
+        {
+            i = 0;
+
+            this.Close();                  
+
+        }
+        private void LoginButton(object sender, RoutedEventArgs e)
+        {
+            i = 1;
+
+            this.Close();
+
+        }
+
     }
-
 }
