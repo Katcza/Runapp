@@ -30,7 +30,7 @@
 
                 <!--For password-->
 
-                <Button Content="Login" FontSize="20" FontWeight="Bold" Height="37" HorizontalAlignment="Left" Margin="183,204,0,0" Name="Submit" VerticalAlignment="Top" Width="112" Background="#FF53B6CE" BorderBrush="Black" BorderThickness="3"  Foreground="#FF3F454E" Click="SubmitButton" />
+                <Button Content="Login" FontSize="20" FontWeight="Bold" Height="37" HorizontalAlignment="Left" Margin="183,204,0,0" Name="Submit" VerticalAlignment="Top" Width="112" Background="#FF53B6CE" BorderBrush="Black" BorderThickness="3"  Foreground="#FF3F454E" Click="OK" />
 
             </Grid>
             <Grid x:Name="GridTheTittleBar" Background="#FF53B6CE" MouseDown="GridTheTittleBar_MouseDown" Margin="0,0,0.4,544.6">

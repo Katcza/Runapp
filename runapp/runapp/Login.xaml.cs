@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
+using MySql.Data.MySqlClient;
 
 
 namespace runapp
@@ -23,7 +25,7 @@ namespace runapp
         public Window2()
         {
             InitializeComponent();
-            this.Closing += new System.ComponentModel.CancelEventHandler(Window2_Closing);
+            
         }
         private void ShutdownButton_Click(object sender, RoutedEventArgs e)
         {
@@ -52,18 +54,58 @@ namespace runapp
             Application.Current.MainWindow.WindowState = WindowState.Minimized;
         }
 
-        void Window2_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            // Create a window
-            MainWindow window = new MainWindow();
-
-            // Open a window
-            window.Show();
-        }
+       
         private void SubmitButton(object sender, RoutedEventArgs e)
         {
 
             this.Close();
+        }
+
+
+        //BAZA DANYCH
+
+
+        private void OK(object sender, RoutedEventArgs e)
+        {
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=runapp;";
+
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+
+            try
+            {
+                if (databaseConnection.State == ConnectionState.Closed)
+                    databaseConnection.Open();
+                string query = "SELECT COUNT(1) FROM users WHERE nick=@Username AND pass=@Pasword";
+                MySqlCommand sqlCmd = new MySqlCommand(query,databaseConnection);
+                sqlCmd.CommandType = CommandType.Text;
+                sqlCmd.Parameters.AddWithValue("@Username", textBoxFirstName.Text);
+                sqlCmd.Parameters.AddWithValue("@Pasword", passwordBox.Password);
+                int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
+                if (count == 1)
+                {
+                    // Create a window
+                    MainWindow window = new MainWindow();
+                    window.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Nick or password wrong");
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            finally
+            {
+                databaseConnection.Close();
+
+            }
+
+
         }
     }
 }
