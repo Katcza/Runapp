@@ -43,58 +43,12 @@
 
                 <Button Content="Submit" FontSize="20" FontWeight="Bold" Height="37" HorizontalAlignment="Left" Margin="183,204,0,0" Name="Submit" VerticalAlignment="Top" Width="112" Background="#FF53B6CE" BorderBrush="Black" BorderThickness="3"  Foreground="#FF3F454E" Click="SubmitButton" />
 
-                <Button Content="F" FontWeight="Bold"  Height="23" HorizontalAlignment="Left" Margin="183,112,0,0" x:Name="SexF" VerticalAlignment="Top" Width="31" Background="#FF53B6CE" BorderBrush="Black" BorderThickness="3"  Foreground="#FF3F454E" >
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Style.Triggers>
-                                <Trigger Property="IsPressed" Value="True">
-                                    <Trigger.EnterActions>
-                                        <BeginStoryboard>
-                                            <Storyboard>
-                                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" To="Gray"/>
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </Trigger.EnterActions>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                </Button>
-                <Button Content="O" FontWeight="Bold" Height="23" HorizontalAlignment="Left" Margin="284,112,0,0" x:Name="SexO" VerticalAlignment="Top" Width="30" Background="#FF53B6CE" BorderBrush="Black" BorderThickness="3"  Foreground="#FF3F454E" >
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Style.Triggers>
-                                <Trigger Property="IsPressed" Value="True">
-                                    <Trigger.EnterActions>
-                                        <BeginStoryboard>
-                                            <Storyboard>
-                                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" To="Gray"/>
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </Trigger.EnterActions>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                </Button>
-                <Button Content="M" FontWeight="Bold" Height="23" HorizontalAlignment="Left" Margin="235,112,0,0" x:Name="SexM" VerticalAlignment="Top" Width="31" Background="#FF53B6CE" BorderBrush="Black" BorderThickness="3"  Foreground="#FF3F454E" >
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Style.Triggers>
-                                <Trigger Property="IsPressed" Value="True">
-                                    <Trigger.EnterActions>
-                                        <BeginStoryboard>
-                                            <Storyboard>
-                                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" To="Gray"/>
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </Trigger.EnterActions>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                </Button>
-
+                <StackPanel>
+                    <RadioButton Content="Female" Margin="183,110,0,0" IsChecked="True" />
+                    <RadioButton Content="Male" Margin="183,5,0,0" />
+                    <RadioButton Content="Other" Margin="183,5,0,0"/>
+                   
+                </StackPanel>
             </Grid>
             <Grid x:Name="GridTheTittleBar" Background="#FF53B6CE" MouseDown="GridTheTittleBar_MouseDown" Margin="0,0,0.4,544.6">
                 <Grid.RowDefinitions>

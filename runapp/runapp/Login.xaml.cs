@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data;
 using MySql.Data.MySqlClient;
+using System.Security.Cryptography;
 
 
 namespace runapp
@@ -67,7 +68,8 @@ namespace runapp
 
         private void OK(object sender, RoutedEventArgs e)
         {
-            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=runapp;";
+
+            string connectionString = "server=runapp.cba.pl;uid=runapp;pwd=Jenniferlopez2;database=runapp;";
 
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
 
