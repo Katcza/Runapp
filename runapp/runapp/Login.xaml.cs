@@ -46,13 +46,13 @@ namespace runapp
             }
             else
             {
-                Application.Current.MainWindow.WindowState = WindowState.Maximized;
+                this.WindowState = WindowState.Maximized;
             }
         }
 
         private void MinButton2_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.MainWindow.WindowState = WindowState.Minimized;
+           this.WindowState = WindowState.Minimized;
         }
 
        
