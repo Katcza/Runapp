@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data;
 using MySql.Data.MySqlClient;
+using System.Drawing;
 
 
 
@@ -23,22 +24,23 @@ namespace runapp
     /// </summary>
     public partial class Window1 : Window
     {
+       
         public Window1()
         {
             InitializeComponent();
             this.Closing += new System.ComponentModel.CancelEventHandler(Window1_Closing);
         }
-        private void ShutdownButton_Click(object sender, RoutedEventArgs e)
+        private void ShutdownButton1_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
-        private void GridTheTittleBar_MouseDown(object sender, MouseButtonEventArgs e)
+        private void GridTheTittleBar1_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
         }
 
-        private void MaxiButton_Click(object sender, RoutedEventArgs e)
+        private void MaxiButton1_Click(object sender, RoutedEventArgs e)
         {
             if (this.WindowState == WindowState.Maximized)
             {
@@ -50,7 +52,7 @@ namespace runapp
             }
         }
 
-        private void MinButton_Click(object sender, RoutedEventArgs e)
+        private void MinButton1_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.MainWindow.WindowState = WindowState.Minimized;
         }
@@ -67,63 +69,94 @@ namespace runapp
                 window.Show();
             }
 
-            
+
 
         }
-       
+
         private void LoginButton(object sender, RoutedEventArgs e)
         {
-            
+
             this.Close();
 
         }
+
+
+
+        string gender = "F";
+        /*private void GenderButtonCheck(object sender, RoutedEventArgs e)
+        {
+            if (rbFemale.Checked==true)
+            {
+                gender = "F";
+            }
+
+            if (rbMale.Checked)
+            {
+                gender = "M";
+            }
+
+            if (rbOther.Checked)
+            {
+                gender = "O";
+            }
+        }*/
         //BAZA DANYCH
+
 
 
         private void SubmitButton(object sender, RoutedEventArgs e)
         {
-            i= 1;
+            i = 1;
             
-            string connectionString = "server=runapp.cba.pl;uid=runapp;pwd=Jenniferlopez2;database=runapp;";
-
-            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
-
-            try
+            if ((String.IsNullOrEmpty(passwordBox.Password)) || (String.IsNullOrEmpty(textBoxFirstName.Text)))
             {
+                MessageBox.Show("Empty");
 
-                if (databaseConnection.State == ConnectionState.Closed)
-                    databaseConnection.Open();
-                string result="SELECT COUNT(1) FROM users WHERE nick=@Username ";
-                MySqlCommand sqlCmd = new MySqlCommand(result, databaseConnection);
-                sqlCmd.CommandType = CommandType.Text;
-                sqlCmd.Parameters.AddWithValue("@Username", textBoxFirstName.Text);
-                int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
+            }
+            else
+            {
+                string connectionString = "server=runapp.cba.pl;uid=runapp;pwd=Jenniferlopez2;database=runapp;";
 
-                if (count == 1)
+                MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+
+                try
                 {
-                    MessageBox.Show("Nick already exist");
-                }
-                else
-                {
-                  
-                    string query = "INSERT INTO `users` (`nick` , `pass`) VALUES (@Username, @Pasword )";
-                    MySqlCommand sqlCmdq = new MySqlCommand(query, databaseConnection);
-                    sqlCmdq.CommandType = CommandType.Text;
-                    sqlCmdq.Parameters.AddWithValue("@Username", textBoxFirstName.Text);
-                    sqlCmdq.Parameters.AddWithValue("@Pasword", passwordBox.Password);
-                    int countq = Convert.ToInt32(sqlCmdq.ExecuteScalar());
 
-                   
+                    if (databaseConnection.State == ConnectionState.Closed)
+                        databaseConnection.Open();
+                    string result = "SELECT COUNT(1) FROM users WHERE nick=@Username ";
+                    MySqlCommand sqlCmd = new MySqlCommand(result, databaseConnection);
+                    sqlCmd.CommandType = CommandType.Text;
+                    sqlCmd.Parameters.AddWithValue("@Username", textBoxFirstName.Text);
+                    int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
+
+                    if (count == 1)
+                    {
+                        MessageBox.Show("Nick already exist");
+                    }
+                    else
+                    {
+
+                        string query = "INSERT INTO `users` (`nick` , `pass`,`sex`) VALUES (@Username, @Pasword,'"+ gender+"' )";
+                        MySqlCommand sqlCmdq = new MySqlCommand(query, databaseConnection);
+                        sqlCmdq.CommandType = CommandType.Text;
+                        sqlCmdq.Parameters.AddWithValue("@Username", textBoxFirstName.Text);
+                        sqlCmdq.Parameters.AddWithValue("@Pasword", passwordBox.Password);
+                        int countq = Convert.ToInt32(sqlCmdq.ExecuteScalar());
+
+
                         // Create a window
                         MainWindow window = new MainWindow();
                         window.Show();
                         this.Close();
-                    
 
 
+
+                    }
                 }
+            
 
-            }
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -137,6 +170,7 @@ namespace runapp
 
 
         }
+    }
 
 
     }

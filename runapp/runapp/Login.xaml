@@ -9,49 +9,64 @@
         Title="Window2" Height="600" Width="1024" ResizeMode="NoResize" WindowStyle="None">
     <Grid>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
 
         </Grid.ColumnDefinitions>
-        <Grid Background="#FF53B6CE" Grid.ColumnSpan="2" Margin="0,0,-0.4,0.4">
-            <TextBlock Height="45" HorizontalAlignment="Left" Margin="20,60,0,0" Name="textBlockHeading" Text="Hello! "  VerticalAlignment="Top" Width="339"  FontSize="25" FontStretch="ExtraCondensed" Foreground="#FF3B5662" FontWeight="Bold"/>
+        <Grid Background="#FF53B6CE" x:Name="GridTheTittleBar2"  MouseDown="GridTheTittleBar2_MouseDown" Margin="0,0,0,0" Grid.RowSpan="1">
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.RowSpan="1">
+                <Button x:Name="MinButton2" Width="35" Height="35" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3F454E" Click="MinButton2_Click" >
+                    <materialDesign:PackIcon Kind="WindowMinimize"  Height="30" Width="31"/>
+                </Button>
+
+                <Button x:Name="MaxButton2" Width="35" Height="35" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3F454E" Click="MaxiButton2_Click" >
+                    <materialDesign:PackIcon Kind="WindowMaximize"  Height="30" Width="31"/>
+                </Button>
+
+                <Button x:Name="ShutdownButton2" Width="35" Height="35" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3F454E" Click="ShutdownButton2_Click">
+                    <materialDesign:PackIcon Kind="Power" Height="30" Width="31"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Grid Background="#FF53B6CE"  Margin="0,54,0,0"  Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid Grid.RowSpan="1">
+                <TextBlock  Margin="0,0,0,0" Name="textBlockHeading" Text="Hello! " VerticalAlignment="Center" HorizontalAlignment="Center"   FontSize="45" Foreground="#FF3B5662" FontWeight="Bold" Grid.RowSpan="1"/>
+            </Grid>
             <!--Button as a Link button using style-->
             <!--end Button as a Link button using style-->
-            <Grid Margin="270,0,270,170" Background="White" Height="270" VerticalAlignment="Bottom" RenderTransformOrigin="0.52,0.465">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="252*" />
-                    <!--   <RowDefinition Height="12*" />-->
-                </Grid.RowDefinitions>
-                <TextBlock Height="20" HorizontalAlignment="Left" Margin="67,0,0,0" x:Name ="errormessage" VerticalAlignment="Top" Width="247"  OpacityMask="Crimson" Foreground="#FFE5572C" />
-                <TextBlock Height="30" HorizontalAlignment="Left" Margin="67,20,0,0" Name="textBlockFirstname" Text="Nick:" FontSize="20" VerticalAlignment="Top" Foreground="#FF3B5662" Width="110" FontWeight="Bold" />
-                <TextBlock Height="30" HorizontalAlignment="Left" Margin="67,63,0,0" Name="textBlockLastName" Text="Password:" FontSize="20" VerticalAlignment="Top" Foreground="#FF3B5662" Width="110" FontWeight="Bold" />
 
-                <TextBox Height="30" HorizontalAlignment="Left" Margin="183,20,0,0" Name="textBoxFirstName" VerticalAlignment="Top" Width="222"  FontSize="20" />
-                <PasswordBox Height="30" HorizontalAlignment="Left" Margin="183,63,0,0" Name="passwordBox" VerticalAlignment="Top" Width="222"  FontSize="20"/>
+            <Grid Margin="0,0,0,0" Background="White"   Grid.Column="1" Grid.Row="1" >
+                
+
+                <TextBlock Height="20" HorizontalAlignment="Left" Margin="67,0,0,0" x:Name ="errormessage" VerticalAlignment="Top" Width="247"  OpacityMask="Crimson" Foreground="#FFE5572C" />
+                <TextBlock Height="30" HorizontalAlignment="Center" Margin="0,20,0,0" Name="textBlockFirstname" Text="Nick:" FontSize="20" VerticalAlignment="Top" Foreground="#FF3B5662" Width="56" FontWeight="Bold" />
+                <TextBlock Height="30" HorizontalAlignment="Center" Margin="0,90,0,0" Name="textBlockLastName" Text="Password:" FontSize="20" VerticalAlignment="Top" Foreground="#FF3B5662" Width="110" FontWeight="Bold" />
+
+                <TextBox Height="30" HorizontalAlignment="Center" Margin="0,50,0,0" Name="textBoxFirstName" VerticalAlignment="Top" Width="222"  FontSize="20" />
+                <PasswordBox Height="30" HorizontalAlignment="Center" Margin="0,120,0,0" Name="passwordBox" VerticalAlignment="Top" Width="222"  FontSize="20"/>
 
                 <!--For password-->
 
-                <Button Content="Login" FontSize="20" FontWeight="Bold" Height="37" HorizontalAlignment="Left" Margin="183,204,0,0" Name="Submit" VerticalAlignment="Top" Width="112" Background="#FF53B6CE" BorderBrush="Black" BorderThickness="3"  Foreground="#FF3F454E" Click="OK" />
+                <Button Content="Login" FontSize="20" FontWeight="Bold" Height="37" HorizontalAlignment="Center" Margin="0,254,0,0" Name="Submit" VerticalAlignment="Top" Width="112" Background="#FF53B6CE" BorderBrush="Black" BorderThickness="3"   Foreground="#FF3F454E" Click="OK" />
 
             </Grid>
-            <Grid x:Name="GridTheTittleBar" Background="#FF53B6CE" MouseDown="GridTheTittleBar_MouseDown" Margin="0,0,0.4,544.6">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="37*"/>
-                    <RowDefinition Height="3*"/>
-                </Grid.RowDefinitions>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.RowSpan="2">
-                    <Button x:Name="MinButton" Width="35" Height="35" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3F454E" Click="MinButton_Click" >
-                        <materialDesign:PackIcon Kind="WindowMinimize"  Height="30" Width="31"/>
-                    </Button>
 
-                    <Button x:Name="MaxButton" Width="35" Height="35" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3F454E" Click="MaxiButton_Click" >
-                        <materialDesign:PackIcon Kind="WindowMaximize"  Height="30" Width="31"/>
-                    </Button>
-
-                    <Button x:Name="ShutdownButton" Width="35" Height="35" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3F454E" Click="ShutdownButton_Click">
-                        <materialDesign:PackIcon Kind="Power" Height="30" Width="31"/>
-                    </Button>
-                </StackPanel>
-            </Grid>
         </Grid>
 
     </Grid>

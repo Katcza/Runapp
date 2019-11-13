@@ -28,17 +28,17 @@ namespace runapp
             InitializeComponent();
             
         }
-        private void ShutdownButton_Click(object sender, RoutedEventArgs e)
+        private void ShutdownButton2_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
-        private void GridTheTittleBar_MouseDown(object sender, MouseButtonEventArgs e)
+        private void GridTheTittleBar2_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
         }
 
-        private void MaxiButton_Click(object sender, RoutedEventArgs e)
+        private void MaxiButton2_Click(object sender, RoutedEventArgs e)
         {
             if (this.WindowState == WindowState.Maximized)
             {
@@ -50,7 +50,7 @@ namespace runapp
             }
         }
 
-        private void MinButton_Click(object sender, RoutedEventArgs e)
+        private void MinButton2_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.MainWindow.WindowState = WindowState.Minimized;
         }
@@ -68,45 +68,54 @@ namespace runapp
 
         private void OK(object sender, RoutedEventArgs e)
         {
-
-            string connectionString = "server=runapp.cba.pl;uid=runapp;pwd=Jenniferlopez2;database=runapp;";
-
-            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
-
-            try
+            if ((String.IsNullOrEmpty(passwordBox.Password))|| (String.IsNullOrEmpty(textBoxFirstName.Text)))
             {
-                if (databaseConnection.State == ConnectionState.Closed)
-                    databaseConnection.Open();
-                string query = "SELECT COUNT(1) FROM users WHERE nick=@Username AND pass=@Pasword";
-                MySqlCommand sqlCmd = new MySqlCommand(query,databaseConnection);
-                sqlCmd.CommandType = CommandType.Text;
-                sqlCmd.Parameters.AddWithValue("@Username", textBoxFirstName.Text);
-                sqlCmd.Parameters.AddWithValue("@Pasword", passwordBox.Password);
-                int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
-                if (count == 1)
+                MessageBox.Show("Empty");
+
+            }
+            else
+            {
+
+                string connectionString = "server=runapp.cba.pl;uid=runapp;pwd=Jenniferlopez2;database=runapp;";
+
+                MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+
+                try
                 {
-                    // Create a window
-                    MainWindow window = new MainWindow();
-                    window.Show();
-                    this.Close();
+                    if (databaseConnection.State == ConnectionState.Closed)
+                        databaseConnection.Open();
+                    string query = "SELECT COUNT(1) FROM users WHERE nick=@Username AND pass=@Pasword";
+                    MySqlCommand sqlCmd = new MySqlCommand(query, databaseConnection);
+                    sqlCmd.CommandType = CommandType.Text;
+                    sqlCmd.Parameters.AddWithValue("@Username", textBoxFirstName.Text);
+                    sqlCmd.Parameters.AddWithValue("@Pasword", passwordBox.Password);
+                    int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
+
+
+                    if (count == 1)
+                    {
+                        // Create a window
+                        MainWindow window = new MainWindow();
+                        window.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nick or password wrong");
+                    }
+
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Nick or password wrong");
+                    MessageBox.Show(ex.Message);
+
                 }
+                finally
+                {
+                    databaseConnection.Close();
 
+                }
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-
-            }
-            finally
-            {
-                databaseConnection.Close();
-
-            }
-
 
         }
     }
