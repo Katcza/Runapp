@@ -55,11 +55,11 @@
                 
 
                 <TextBlock Height="20" HorizontalAlignment="Left" Margin="67,0,0,0" x:Name ="errormessage" VerticalAlignment="Top" Width="247"  OpacityMask="Crimson" Foreground="#FFE5572C" />
-                <TextBlock Height="30" HorizontalAlignment="Center" Margin="0,20,0,0" Name="textBlockFirstname" Text="Nick:" FontSize="20" VerticalAlignment="Top" Foreground="#FF3B5662" Width="56" FontWeight="Bold" />
-                <TextBlock Height="30" HorizontalAlignment="Center" Margin="0,90,0,0" Name="textBlockLastName" Text="Password:" FontSize="20" VerticalAlignment="Top" Foreground="#FF3B5662" Width="110" FontWeight="Bold" />
+                <TextBlock Height="30" HorizontalAlignment="Center" Margin="0,50,0,0" Name="textBlockFirstname" Text="NICK:" FontSize="20" VerticalAlignment="Top" Foreground="#FF3B5662" FontWeight="Bold" />
+                <TextBlock Height="30" HorizontalAlignment="Center" Margin="0,120,0,0" Name="textBlockLastName" Text="PASSWORD:" FontSize="20" VerticalAlignment="Top" Foreground="#FF3B5662"  FontWeight="Bold" />
 
-                <TextBox Height="30" HorizontalAlignment="Center" Margin="0,50,0,0" Name="textBoxFirstName" VerticalAlignment="Top" Width="222"  FontSize="20" />
-                <PasswordBox Height="30" HorizontalAlignment="Center" Margin="0,120,0,0" Name="passwordBox" VerticalAlignment="Top" Width="222"  FontSize="20"/>
+                <TextBox Height="30" HorizontalAlignment="Center" Margin="0,80,0,0" Name="textBoxFirstName" VerticalAlignment="Top" Width="222"  FontSize="20" />
+                <PasswordBox Height="30" HorizontalAlignment="Center" Margin="0,150,0,0" Name="passwordBox" VerticalAlignment="Top" Width="222"  FontSize="20"/>
 
                 <!--For password-->
 
