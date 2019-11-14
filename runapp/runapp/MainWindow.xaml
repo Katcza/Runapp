@@ -71,5 +71,10 @@
             </StackPanel>
         </Grid>
 
+        <Grid Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="300,167,0,0" Grid.Row="1">
+
+            <TextBlock Text="HEART RATE" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"  Background="{x:Null}" Foreground="#FF3B5662" Width="358" FontWeight="Bold" Margin="203,180,163,180"/>
+        </Grid>
+
     </Grid>
 </Window>
