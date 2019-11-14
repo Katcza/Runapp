@@ -81,25 +81,20 @@ namespace runapp
         }
 
 
-
+        // radiobutton gender
         string gender = "F";
-        /*private void GenderButtonCheck(object sender, RoutedEventArgs e)
+        private void rbFemale_Checkchange(object sender, RoutedEventArgs e)
         {
-            if (rbFemale.Checked==true)
-            {
-                gender = "F";
-            }
 
-            if (rbMale.Checked)
-            {
-                gender = "M";
-            }
+            gender = "F";
+        }
 
-            if (rbOther.Checked)
-            {
-                gender = "O";
-            }
-        }*/
+        private void rbMale_Checkchange(object sender, RoutedEventArgs e)
+        {
+
+            gender = "M";
+        }
+
         //BAZA DANYCH
 
 
