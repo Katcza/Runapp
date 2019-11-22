@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="runapp.UserControlYOURPLAN"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:runapp"
+             mc:Ignorable="d" Width="700" Height="700">
+    <Grid>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Height="450" Margin="0,0,0,-0.4" >
+            <StackPanel Margin="0,-214,0,64.6" Width="703">
+
+                <TextBlock Text="YOUR PLAN" FontSize="50" FontFamily="Cooper Black" Foreground="#FF3B5662" Height="58" Margin="0,0,10.2,0"/>
+                <TextBlock Text="C H O O S E   D A T E" FontSize="30" Foreground="#FF3B5662" HorizontalAlignment="Center"/>
+                <Grid Height="365" Margin="0,0,10,0">
+                    <DatePicker SelectedDateFormat="Long"  CalendarOpened="DatePicker_CalendarOpened" CalendarClosed="DatePicker_CalendarClosed" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="181,0,187.2,0" Width="325" Height="355" FirstDayOfWeek="Monday"/> 
+                </Grid>
+
+            </StackPanel>
+
+
+        </StackPanel>
+    </Grid>
+</UserControl>

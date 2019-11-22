@@ -54,7 +54,7 @@
 
             <Grid Background="#FF53B6CE" Margin="0,0,0,0" Grid.RowSpan="1"  >
 
-                <TextBlock  HorizontalAlignment="Left" Margin="50,0,0,0" Name="textBlockHeading" Text="Hello! Register new account:"  VerticalAlignment="Top" Width="339"  FontSize="25" FontStretch="ExtraCondensed" Foreground="#FF3B5662" FontWeight="Bold"/>
+                <TextBlock  HorizontalAlignment="Center" Margin="50,0,0,0" Name="textBlockHeading" Text="H E L L O !  Let's Start by creating your account:"  VerticalAlignment="Top" Width="900"  FontSize="40" FontStretch="ExtraCondensed" Foreground="#FF3B5662"  FontFamily="Cooper Black" />
 
             </Grid>
 
@@ -68,7 +68,7 @@
                 </Grid.ColumnDefinitions>
 
 
-                <Grid  Background="White" Margin="0.2,0,0.2,141" Grid.Column="1" >
+                <Grid  Background="White" Margin="0.2,0,0.2,127" Grid.Column="1" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*" />
                         <ColumnDefinition Width="2*" />
@@ -91,15 +91,15 @@
                     <Button Grid.Column="1" Style="{DynamicResource RoundedButtonStyle}" Content="Submit" FontSize="20" FontFamily="Open Sans" Height="50" HorizontalAlignment="Center" Margin="0,267,0,0" Name="Submit" VerticalAlignment="Top" Width="129"    Foreground="White" Click="SubmitButton" />
 
 
-                    <RadioButton   Grid.Column="1" VerticalAlignment="Center" x:Name="rbFemale"  Content="Female" Margin="0,140,0,0" Checked="rbFemale_Checkchange" IsChecked="True"  />
-                    <RadioButton   Grid.Column="1" VerticalAlignment="Center" x:Name="rbMale" Content="Male" Margin="150,140,0,0" Checked="rbMale_Checkchange"  />
+                    <RadioButton   Grid.Column="1" VerticalAlignment="Center" x:Name="rbFemale"  Content="Female" Margin="42.4,226,153.4,87" Checked="rbFemale_Checkchange" IsChecked="True" Grid.ColumnSpan="2" Height="28"  />
+                    <RadioButton   Grid.Column="1" VerticalAlignment="Center" x:Name="rbMale" Content="Male" Margin="183.4,226,153.4,87" Checked="rbMale_Checkchange" Grid.ColumnSpan="2" Height="28"  />
 
 
 
                 </Grid>
             </Grid>
 
-            <Grid  Background="#FF53B6CE" Margin="0,9.4,0,0" Grid.Row="2">
+            <Grid  Background="#FF53B6CE" Margin="0,38.6,0,0" Grid.Row="2">
 
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Name="textBlockHeading_Copy" Text="If you have an account:"  Width="339"  FontSize="25"  Foreground="#FF3B5662" FontWeight="Bold" Margin="0,0,0,0"/>
             </Grid>

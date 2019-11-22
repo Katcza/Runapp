@@ -46,7 +46,18 @@ namespace runapp
                     MAINGRID.Children.Clear();
                     MAINGRID.Children.Add(new UserControlWEATHER());
                     break;
-               
+
+                case 1:
+                    MAINGRID.Children.Clear();
+                    MAINGRID.Children.Add(new UserControlSTATISTICS());
+                    break;
+
+
+                case 2:
+                    MAINGRID.Children.Clear();
+                    MAINGRID.Children.Add(new UserControlYOURPLAN());
+                    break;
+
                 default:
                     break;
             }
