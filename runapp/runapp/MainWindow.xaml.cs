@@ -35,24 +35,6 @@ namespace runapp
             DragMove();
         }
 
-        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            int index = ListViewMenu.SelectedIndex;
-            //MoveCursorMenu(index);
-
-            switch (index)
-            {
-                case 0:
-                    MAINGRID.Children.Clear();
-                    MAINGRID.Children.Add(new UserControlWEATHER());
-                    break;
-               
-                default:
-                    break;
-            }
-        }
-
-
         private void MaxiButton_Click(object sender, RoutedEventArgs e)
         {
             if (this.WindowState == WindowState.Maximized)
