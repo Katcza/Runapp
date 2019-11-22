@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="runapp.UserControlSTATISTICS"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:runapp"
+             mc:Ignorable="d" Width="700" Height="700">
+    <Grid>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Height="450" Margin="0,0,0,-0.4" >
+            <StackPanel Margin="0,-214,0,64.6" Width="703">
+
+                <TextBlock Text="CONTROL YOUR STATS" FontSize="50" FontFamily="Cooper Black" Foreground="#FF3B5662" Height="58" Margin="0,0,10.2,0" HorizontalAlignment="Center"/>
+                <TextBlock Text="" FontSize="30" Foreground="#FF3B5662" HorizontalAlignment="Center"/>
+                <Grid Height="365" Margin="0,0,10,0">
+                 
+                   
+                </Grid>
+
+            </StackPanel>
+
+
+        </StackPanel>
+    </Grid>
+</UserControl>
