@@ -90,14 +90,8 @@
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlSTATISTICS.xaml.cs">
-      <DependentUpon>UserControlSTATISTICS.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControlWEATHER.xaml.cs">
       <DependentUpon>UserControlWEATHER.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControlYOURPLAN.xaml.cs">
-      <DependentUpon>UserControlYOURPLAN.xaml</DependentUpon>
     </Compile>
     <Page Include="Login.xaml">
       <SubType>Designer</SubType>
@@ -119,15 +113,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlSTATISTICS.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="UserControlWEATHER.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControlYOURPLAN.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
