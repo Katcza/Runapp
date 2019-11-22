@@ -54,5 +54,7 @@ and change the color of the selected bullet into a darker gray for better highli
                 </Setter.Value>
             </Setter>
         </Style>
+
+        
     </Application.Resources>
 </Application>

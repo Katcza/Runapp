@@ -79,7 +79,7 @@
 
 
                     <TextBlock Height="20" HorizontalAlignment="Left" Margin="67,0,0,0" x:Name ="errormessage" VerticalAlignment="Top" Width="247"  OpacityMask="Crimson" Foreground="#FFE5572C" />
-                    <TextBlock Grid.Column="1" Height="30" HorizontalAlignment="Center" Margin="0,20,0,0" Name="textBlockFirstname" Text="Nick:" FontSize="20" VerticalAlignment="Top" Foreground="#FF3B5662"  FontWeight="Bold" />
+                    <TextBlock Grid.Column="1" Height="30" HorizontalAlignment="Center" Margin="0,20,0,0" Name="textBlockFirstname" Text="Login:" FontSize="20" VerticalAlignment="Top" Foreground="#FF3B5662"  FontWeight="Bold" />
                     <TextBlock Grid.Column="1" Height="30" HorizontalAlignment="Center" Margin="0,100,0,0" Name="textBlockLastName" Text="Password:" FontSize="20" VerticalAlignment="Top" Foreground="#FF3B5662"  FontWeight="Bold" />
                     <TextBlock Grid.Column="1" Height="30" HorizontalAlignment="Center" Margin="0,175,0,0" Name="textBlockEmailId" Text="Gender:" FontSize="20" VerticalAlignment="Top" Foreground="#FF3B5662"  FontWeight="Bold" />
 
@@ -90,9 +90,9 @@
 
                     <Button Grid.Column="1" Style="{DynamicResource RoundedButtonStyle}" Content="Submit" FontSize="20" FontFamily="Open Sans" Height="50" HorizontalAlignment="Center" Margin="0,267,0,0" Name="Submit" VerticalAlignment="Top" Width="129"    Foreground="White" Click="SubmitButton" />
 
-                    
-                        <RadioButton   Grid.Column="1" VerticalAlignment="Center" x:Name="rbFemale"  Content="Female" Margin="0,140,0,0" Checked="rbFemale_Checkchange" IsChecked="True"  />
-                        <RadioButton   Grid.Column="1" VerticalAlignment="Center" x:Name="rbMale" Content="Male" Margin="150,140,0,0" Checked="rbMale_Checkchange"  />
+
+                    <RadioButton   Grid.Column="1" VerticalAlignment="Center" x:Name="rbFemale"  Content="Female" Margin="0,140,0,0" Checked="rbFemale_Checkchange" IsChecked="True"  />
+                    <RadioButton   Grid.Column="1" VerticalAlignment="Center" x:Name="rbMale" Content="Male" Margin="150,140,0,0" Checked="rbMale_Checkchange"  />
 
 
 
@@ -103,7 +103,7 @@
 
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Name="textBlockHeading_Copy" Text="If you have an account:"  Width="339"  FontSize="25"  Foreground="#FF3B5662" FontWeight="Bold" Margin="0,0,0,0"/>
             </Grid>
-            
+
             <Grid Margin="0,0,0,0" Grid.Row="3" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
@@ -112,7 +112,7 @@
 
 
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="3"  Content="Login" Cursor="Hand" Click="LoginButton" Margin="0,13,10,13" VerticalAlignment="Center" Height="52" >
+                <Button Grid.Column="1"  Content="Log in" Cursor="Hand" Click="LoginButton" Margin="522.2,0,103,25.6" VerticalAlignment="Center" Height="52" Grid.ColumnSpan="2" >
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid x:Name="grid" Margin="-3,0,0.6,0">
