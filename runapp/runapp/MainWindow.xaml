@@ -19,42 +19,37 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Grid x:Name="MAINGRID"  Margin="2.6,0,0,0" Grid.Column="2" Grid.Row="1" Grid.RowSpan="2" Background="#FF6EC0D4"/>
-
-
-        <Grid Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="0,167,719,0" Background="#FF53B6CE">
-
-            <ListView  x:Name="ListViewMenu" Background="#FF6EC0D4" BorderBrush="Transparent" Margin="0,10,10,51" SelectionChanged="ListViewMenu_SelectionChanged" >
-
-                <ListViewItem Height="80" Foreground="#FF767680" Background="#FF6EC0D4" BorderBrush="Transparent" Width="290">
+        <Grid Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="0,167,2.4,0" Background="#FF53B6CE">
+            <ListView  Background="#FF6EC0D4" BorderBrush="#FF585A60" Margin="0,10,0,51">
+                <ListViewItem Height="80" Foreground="#FF767680" Background="#FF6EC0D4" Width="290">
                     <StackPanel Orientation="Horizontal" Width="280">
                         <materialDesign:PackIcon Kind="Cloud" Height="64"  Width="120" Foreground="#FF4DA5BA" VerticalAlignment="Center" />
-                        <TextBlock Text="WEATHER" FontSize="28"  VerticalAlignment="Center" Background="{x:Null}" Foreground="#FF3B5662" Width="138" FontFamily="Cooper Black"/>
+                        <TextBlock Text="WEATHER" FontSize="25"  VerticalAlignment="Center" Background="{x:Null}" Foreground="#FF3B5662" Width="138" FontWeight="Bold"/>
                     </StackPanel>
 
                 </ListViewItem>
                 <ListViewItem Height="80" Foreground="#FF53B6CE" Background="#FF6EC0D4" Width="290">
                     <StackPanel Orientation="Horizontal" Width="280">
                         <materialDesign:PackIcon Kind="Assessment" Height="64"  Width="120" Foreground="#FF4DA5BA" VerticalAlignment="Center" />
-                        <TextBlock Text="STATISTICS" FontSize="29"  VerticalAlignment="Center" Width="138" Background="{x:Null}" Foreground="#FF3B5662" FontFamily="Cooper Black"/>
+                        <TextBlock Text="STATISTICS" FontSize="25"  VerticalAlignment="Center" Width="138" Background="{x:Null}" Foreground="#FF3B5662" FontWeight="Bold"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem Height="80" Foreground="#FF53B6CE" Background="#FF6EC0D4" Width="290">
                     <StackPanel Orientation="Horizontal" Width="280">
                         <materialDesign:PackIcon Kind="CalendarAccount" Height="64"  Width="120" Foreground="#FF4DA5BA" VerticalAlignment="Center" />
-                        <TextBlock Text="YOUR PLAN" FontSize="28"  VerticalAlignment="Center" Width="150" Background="{x:Null}" Foreground="#FF3B5662" FontFamily="Cooper Black"/>
+                        <TextBlock Text="YOUR PLAN" FontSize="25"  VerticalAlignment="Center" Width="150" Background="{x:Null}" Foreground="#FF3B5662" FontWeight="Bold"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem Height="80" Foreground="#FF53B6CE" Background="#FF6EC0D4" Width="290">
                     <StackPanel Orientation="Horizontal" Width="280">
                         <materialDesign:PackIcon Kind="TrendingUp" Height="64"  Width="120" Foreground="#FF4DA5BA" VerticalAlignment="Center" />
-                        <TextBlock Text="HEART RATE" FontSize="28"  VerticalAlignment="Center" Width="150" Background="{x:Null}" Foreground="#FF3B5662" FontFamily="Cooper Black" />
+                        <TextBlock Text="HEART RATE" FontSize="25"  VerticalAlignment="Center" Width="150" Background="{x:Null}" Foreground="#FF3B5662" FontWeight="Bold" />
                     </StackPanel>
                 </ListViewItem>
             </ListView>
         </Grid>
 
-        <Image Width="305" HorizontalAlignment="Left" Grid.ColumnSpan="3" Grid.Row="1"  Source="runapp.png" VerticalAlignment="Top" Height="182" Grid.RowSpan="2"/>
+        <Image Width="300" HorizontalAlignment="Left" Grid.ColumnSpan="2" Grid.Row="1"  Source="runapp.png" VerticalAlignment="Top" Height="182" Grid.RowSpan="2"/>
 
         <Grid x:Name="GridTheTittleBar" Grid.ColumnSpan="3" Background="#FF53B6CE" MouseDown="GridTheTittleBar_MouseDown">
             <Grid.RowDefinitions>
@@ -74,6 +69,11 @@
                     <materialDesign:PackIcon Kind="Power" Height="30" Width="31"/>
                 </Button>
             </StackPanel>
+        </Grid>
+
+        <Grid Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="300,167,0,0" Grid.Row="1">
+
+            <TextBlock Text="HEART RATE" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"  Background="{x:Null}" Foreground="#FF3B5662" Width="358" FontWeight="Bold" Margin="203,180,163,180"/>
         </Grid>
 
     </Grid>

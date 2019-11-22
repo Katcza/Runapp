@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace runapp
 {
     /// <summary>
-    /// Interaction logic for UserControlWEATHER.xaml
+    /// Interaction logic for UserControlSTATISTICS.xaml
     /// </summary>
-    public partial class UserControlWEATHER : UserControl
+    public partial class UserControlSTATISTICS : UserControl
     {
-        public UserControlWEATHER()
+        public UserControlSTATISTICS()
         {
             InitializeComponent();
         }
